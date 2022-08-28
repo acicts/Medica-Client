@@ -1,3 +1,10 @@
+<script>
+	import { createEventDispatcher } from 'svelte';
+
+	export let searchValue;
+	export let selectValue = 'All of Sri Lanka';
+</script>
+
 <div
 	class="md:flex hidden mb-[5px] mx-auto md:mb-0 w-[90%] md:w-full items-center md:justify-evenly justify-between"
 >
@@ -5,9 +12,11 @@
 	<input
 		class="w-[65%] px-[25px] py-[10px] bg-[#E7E7E7] text-[#6C6C6C] rounded-full"
 		placeholder="Ex. hydrocortisone / pharmacy name"
+		bind:value={searchValue}
 	/>
 	<select
 		class="bg-[#2F8D76] w-[50%] md:w-[25%] border-solid border-b-[1px] border-white text-white p-[10px] outline-none"
+		bind:value={selectValue}
 	>
 		<option>All of sri lanka</option>
 		<option>Test option 1</option>
@@ -21,6 +30,7 @@
 		<span class="text-white">Search</span>
 		<select
 			class="bg-[#2F8D76] w-[50%] md:w-[25%] border-solid border-b-[1px] border-white text-white p-[10px] outline-none"
+			bind:value={selectValue}
 		>
 			<option>All of sri lanka</option>
 			<option>Test option 1</option>
@@ -30,5 +40,6 @@
 	<input
 		class="ml-[5%] w-[90%] px-[25px] py-[7px] md:py-[10px] bg-[#E7E7E7] text-[#6C6C6C] rounded-full"
 		placeholder="Ex. hydrocortisone / pharmacy name"
+		bind:value={searchValue}
 	/>
 </div>
