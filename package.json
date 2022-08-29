@@ -24,6 +24,7 @@
     "vite": "^3.0.7"
   },
   "dependencies": {
+    "svelte-icons-pack": "^2.0.0",
     "svelte-spa-router": "^3.3.0"
   }
 }
