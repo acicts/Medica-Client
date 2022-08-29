@@ -49,6 +49,15 @@
 	];
 </script>
 
+<svelte:head>
+	<link
+		href="https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.min.css"
+		rel="stylesheet"
+	/>
+	<script
+		src="https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.js"></script>
+</svelte:head>
+
 <Layout isHome={false}>
 	<section
 		slot="hero"

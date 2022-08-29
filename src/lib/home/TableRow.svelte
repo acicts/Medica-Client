@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { link } from 'svelte-spa-router';
-	export let title: string;
+	export let name: string;
 	export let mrp: number;
-	export let stock: number;
+	export let totalStock: number;
 	export let index: number;
 	export let id;
 </script>
@@ -13,13 +13,13 @@
 	} rounded-full text-xs md:text-base cursor-pointer`}
 >
 	<td class="w-6/12 py-[15px] p-[20px] rounded-l-lg md:rounded-l-full"
-		><a href={`/medicine/${id}`} use:link>{title}</a></td
+		><a href={`/medicine/${id}`} use:link>{name}</a></td
 	>
 	<td class="w-1/4 py-[15px] p-[20px]">{mrp}</td>
 	<td class="w-1/4 py-[15px] p-[20px] rounded-r-lg md:rounded-r-full"
-		>{#if stock == 0}
+		>{#if totalStock == 0}
 			Out of stock
-		{:else if stock < 100}
+		{:else if totalStock < 100}
 			Limited Stocks
 		{:else}
 			Available

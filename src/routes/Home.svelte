@@ -2,44 +2,21 @@
 	import TableRow from '../lib/home/TableRow.svelte';
 	import Search from '../lib/home/Search.svelte';
 	import Layout from '../lib/Layout.svelte';
-	import Tag from '../lib/home/Tag.svelte';
+	import { medicine as newMed } from '../data';
 	import TagSection from '../lib/home/TagSection.svelte';
 
 	let searchValue = '';
-	let selectValue = 'All of Sri Lanka';
+	let selectValue = '';
 
-	$: medicines = [
-		{
-			id: 1,
-			title: 'test medicine 1',
-			mrp: 50.0,
-			stock: 50,
-		},
-		{
-			id: 2,
-			title: 'test medicine 2',
-			mrp: 200.0,
-			stock: 1000,
-		},
-		{
-			id: 3,
-			title: 'test medicine 1.2',
-			mrp: 25.0,
-			stock: 122,
-		},
-		{
-			id: 4,
-			title: 'test medicine 3',
-			mrp: 50.0,
-			stock: 50,
-		},
-		{
-			id: 5,
-			title: 'test medicine 4',
-			mrp: 50.0,
-			stock: 0,
-		},
-	].filter((i) => i.title.toLowerCase().includes(searchValue.toLowerCase()));
+	$: medicines = $newMed.filter(
+		(i) =>
+			i.name.toLowerCase().includes(searchValue.toLowerCase()) &&
+			(selectValue === '' ||
+				i.stocks.find(
+					(st) =>
+						st.District.toLowerCase() === selectValue.toLowerCase()
+				))
+	);
 </script>
 
 <Layout isHome={true}>
@@ -68,7 +45,13 @@
 	</section>
 	<section slot="body" class="p-[20px]">
 		{#if searchValue.trim().length > 0}
-			{#if medicines.length === 0}
+			{#if $newMed.length === 0}
+				<p
+					class="text-[#5E9486] w-full text-center my-[10px] font-bold text-xl"
+				>
+					Loading...
+				</p>
+			{:else if medicines.length == 0}
 				<p
 					class="text-[#5E9486] w-full text-center my-[10px] font-bold text-xl"
 				>
