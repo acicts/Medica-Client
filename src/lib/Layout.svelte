@@ -3,12 +3,12 @@
 </script>
 
 <main>
-	<section class="w-full h-[40vh] bg-[#2F8D76] flex items-end justify-center">
+	<section class="w-full min-h-[40vh] bg-[#2F8D76] relative">
 		<slot name="hero" />
 	</section>
 	<section class="min-h-[60vh]"><slot name="body" /></section>
 	<footer
-		class="w-full h-[35vh] bg-[#8FC69C] flex items-start justify-between px-[25px] md:px-[75px] lg:px-[150px] py-[8vh] md:py-[13vh]"
+		class="w-full min-h-[35vh] bg-[#8FC69C] flex items-start justify-between px-[25px] md:px-[75px] lg:px-[150px] pt-[8vh] md:pt-[13vh]"
 	>
 		<ul class="md:flex items-center justify-between">
 			<li class="footer_ul_li"><a href="/" use:link>Home</a></li>

@@ -3,6 +3,7 @@
 	import Search from '../lib/home/Search.svelte';
 	import Layout from '../lib/Layout.svelte';
 	import Tag from '../lib/home/Tag.svelte';
+	import TagSection from '../lib/home/TagSection.svelte';
 
 	let searchValue = '';
 	let selectValue = 'All of Sri Lanka';
@@ -44,7 +45,7 @@
 <Layout>
 	<section
 		slot="hero"
-		class="flex items-center justify-between flex-col w-full py-[10px] md:py-[20px] h-[30vh] md:h-[28vh]"
+		class="flex items-center justify-between flex-col w-full min-h-[30vh] md:min-h-[28vh] absolute bottom-2 left-[50%] translate-x-[-50%]"
 	>
 		<div class="w-max mx-auto">
 			<div
@@ -91,56 +92,55 @@
 					</tbody>
 				</table>
 			{/if}
-
-			<div class="mt-[20px]">
-				<h1 class="text-lg">Similar Searches</h1>
-				<div class="w-full flex items-center justify-between flex-wrap">
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-				</div>
-			</div>
+			<TagSection
+				title="Similar Searches"
+				tags={[
+					'Value 1',
+					'Value 2',
+					'Value 3',
+					'Value 4',
+					'Value 5',
+					'Value 6',
+					'Value 7',
+				]}
+			/>
 		{:else}
-			<div class="">
-				<h1 class="text-lg">Empty Stocks</h1>
-				<div class="w-full flex items-center justify-between flex-wrap">
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-				</div>
-			</div>
-			<div class="mt-[20px]">
-				<h1 class="text-lg">Least Available Stocks</h1>
-				<div class="w-full flex items-center justify-between flex-wrap">
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-				</div>
-			</div>
-			<div class="mt-[20px]">
-				<h1 class="text-lg">Most Searched</h1>
-				<div class="w-full flex items-center justify-between flex-wrap">
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-					<Tag>Value 1</Tag>
-				</div>
-			</div>
+			<TagSection
+				title="Empty Stocks"
+				tags={[
+					'Value 1',
+					'Value 2',
+					'Value 3',
+					'Value 4',
+					'Value 5',
+					'Value 6',
+					'Value 7',
+				]}
+			/>
+			<TagSection
+				title="Least Available Stocks"
+				tags={[
+					'Value 1',
+					'Value 2',
+					'Value 3',
+					'Value 4',
+					'Value 5',
+					'Value 6',
+					'Value 7',
+				]}
+			/>
+			<TagSection
+				title="Most Searched"
+				tags={[
+					'Value 1',
+					'Value 2',
+					'Value 3',
+					'Value 4',
+					'Value 5',
+					'Value 6',
+					'Value 7',
+				]}
+			/>
 		{/if}
 	</section>
 </Layout>
