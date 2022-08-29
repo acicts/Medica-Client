@@ -7,6 +7,12 @@
 	outline: none;
 }
 
+.hidden_scroll_bar::-webkit-scrollbar {
+	width: 0px;
+}
+.hidden_scroll_bar {
+	scrollbar-width: none;
+}
 .footer_ul_li {
 	@apply w-6/12 font-semibold text-lg text-white md:mr-[40px] md:text-xl md:font-medium hover:opacity-40 transition-opacity;
 }

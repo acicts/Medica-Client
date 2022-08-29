@@ -42,7 +42,7 @@
 	].filter((i) => i.title.toLowerCase().includes(searchValue.toLowerCase()));
 </script>
 
-<Layout>
+<Layout isHome={true}>
 	<section
 		slot="hero"
 		class="flex items-center justify-between flex-col w-full min-h-[30vh] md:min-h-[28vh] absolute bottom-2 left-[50%] translate-x-[-50%]"

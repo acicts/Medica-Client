@@ -1,12 +1,19 @@
-<script>
+<script lang="ts">
 	import { link } from 'svelte-spa-router';
+	export let isHome: boolean;
 </script>
 
 <main>
-	<section class="w-full min-h-[40vh] bg-[#2F8D76] relative">
+	<section
+		class={`w-full ${
+			isHome ? 'min-h-[40vh]' : 'min-h-[30vh]'
+		} bg-[#2F8D76] relative`}
+	>
 		<slot name="hero" />
 	</section>
-	<section class="min-h-[60vh]"><slot name="body" /></section>
+	<section class={`${isHome ? 'min-h-[60vh]' : 'min-h-[70vh]'}`}>
+		<slot name="body" />
+	</section>
 	<footer
 		class="w-full min-h-[35vh] bg-[#8FC69C] flex items-start justify-between px-[25px] md:px-[75px] lg:px-[150px] pt-[8vh] md:pt-[13vh]"
 	>
