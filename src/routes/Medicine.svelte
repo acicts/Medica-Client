@@ -1,6 +1,6 @@
 <script>
+	import { link } from 'svelte-spa-router';
 	import TableRow from '../lib/medicine/TableRow.svelte';
-
 	import Layout from '../lib/Layout.svelte';
 	let title = 'Test medicine';
 	let sciTitle = 'Test Scientific medicine';
@@ -37,7 +37,36 @@
 </script>
 
 <Layout isHome={false}>
-	<section slot="body" class="p-[20px]">
+	<section
+		slot="hero"
+		class="min-h-[30vh] p-[30px] flex flex-col items-start justify-between"
+	>
+		<div class="w-full flex items-center justify-between">
+			<div />
+			<a class="w-max" href="/" use:link>
+				<div
+					class="flex items-center justify-between w-max h-max text-white mb-[2px]"
+				>
+					<div
+						class="w-[1.2em] h-[1.2em] rounded-full mr-[5px] bg-white"
+					/>
+					<p class="font-bold text-xl md:text-2xl">Pharmacy App</p>
+				</div>
+				<p class="font-light text-sm text-white w-full text-center">
+					Powered By <a
+						class="hover:underline"
+						href="https://acicts.lk/"
+						target="_blank">ACICTS</a
+					>
+				</p>
+			</a>
+		</div>
+		<div class="text-white">
+			<p class="text-6xl font-black">{title}</p>
+			<p class="text-sm font-light">{sciTitle}</p>
+		</div>
+	</section>
+	<section slot="body" class="py-[20px] px-[20px] md:px-[50px]">
 		<div class="w-full flex items-center justify-between">
 			<select
 				class="border-solid border-b-[1px] border-[#6C6C6C] p-[5px] w-[40%] md:w-[20%] text-[#6C6C6C] bg-white"
@@ -79,5 +108,8 @@
 				</tbody>
 			</table>
 		</div>
+		<div
+			class="bg-[url(https://i.stack.imgur.com/HILmr.png)] bg-center bg-cover w-full h-[40vh]"
+		/>
 	</section>
 </Layout>
