@@ -1,7 +1,20 @@
 <script>
+	import { onMount } from 'svelte';
 	import { link } from 'svelte-spa-router';
 	import TableRow from '../lib/medicine/TableRow.svelte';
 	import Layout from '../lib/Layout.svelte';
+	import mapboxgl from 'mapbox-gl';
+	mapboxgl.accessToken =
+		'pk.eyJ1Ijoic2hha3lhcGVpcmlzIiwiYSI6ImNsN2VneWQ3bTAwYXQzb3Bxb3RiaGJseW8ifQ.vWxsiWVOuY8fiv3TLD3ggg';
+
+	onMount(() => {
+		const map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/shakyapeiris/cks24cavn5dit17o5lskpj3db',
+			center: [80, 7],
+			zoom: 7,
+		});
+	});
 	let title = 'Test medicine';
 	let sciTitle = 'Test Scientific medicine';
 	let pharmacies = [
@@ -110,8 +123,6 @@
 				</tbody>
 			</table>
 		</div>
-		<div
-			class="bg-[url(https://i.stack.imgur.com/HILmr.png)] bg-center bg-cover w-full h-[40vh]"
-		/>
+		<div id="map" class="w-full h-[60vh]" />
 	</section>
 </Layout>

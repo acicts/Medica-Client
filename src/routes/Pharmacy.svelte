@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import { link } from 'svelte-spa-router';
 	import Layout from '../lib/Layout.svelte';
 	import Icon from 'svelte-icons-pack/Icon.svelte';
@@ -6,6 +7,18 @@
 	import BsTelephone from 'svelte-icons-pack/bs/BsTelephone';
 	import TiLocationOutline from 'svelte-icons-pack/ti/TiLocationOutline';
 	import AiOutlineMail from 'svelte-icons-pack/ai/AiOutlineMail';
+	import mapboxgl from 'mapbox-gl';
+	mapboxgl.accessToken =
+		'pk.eyJ1Ijoic2hha3lhcGVpcmlzIiwiYSI6ImNsN2VneWQ3bTAwYXQzb3Bxb3RiaGJseW8ifQ.vWxsiWVOuY8fiv3TLD3ggg';
+
+	onMount(() => {
+		const map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/shakyapeiris/cks24cavn5dit17o5lskpj3db',
+			center: [80, 7],
+			zoom: 7,
+		});
+	});
 	let title = 'Test medicine';
 	let sciTitle = 'Test Scientific medicine';
 	let pharmacy = 'Test pharmacy';
@@ -56,7 +69,7 @@
 	</section>
 	<section slot="body" class="py-[20px] md:px-[50px] px-[10px]">
 		<table
-			class="w-full md:w-[45%] border-collapse my-[50px] text-xs sm:text-base overflow-clip text-[#6C6C6C]"
+			class="w-full md:w-[30%] border-collapse my-[50px] text-xs sm:text-base overflow-clip text-[#6C6C6C]"
 		>
 			<tbody class="w-full">
 				<tr class="w-full">
@@ -66,7 +79,9 @@
 						<Icon src={BsTelephone} />
 						<span class="ml-[5px]">Contact</span>
 					</td>
-					<td class=" w-6/12 pb-[10px] md:p-[10px]">0123456789</td>
+					<td class=" w-6/12 sm:w-10/12 pb-[10px] md:p-[10px]"
+						>0123456789</td
+					>
 				</tr>
 				<tr class="w-full">
 					<td
@@ -75,7 +90,7 @@
 						<Icon src={TiLocationOutline} color="#6C6C6C" />
 						<span class="ml-[5px]">Address</span>
 					</td>
-					<td class=" w-6/12 pb-[10px] md:p-[10px]"
+					<td class=" w-6/12 sm:w-10/12 pb-[10px] md:p-[10px]"
 						>Lorem ipsum dolor sit amet.</td
 					>
 				</tr>
@@ -86,14 +101,12 @@
 						<Icon src={AiOutlineMail} color="#6C6C6C" />
 						<span class="ml-[5px]">Email</span>
 					</td>
-					<td class=" w-6/12 pb-[10px] md:p-[10px]"
+					<td class=" w-6/12 sm:w-10/12 pb-[10px] md:p-[10px]"
 						>testpharmac@testmail.com</td
 					>
 				</tr>
 			</tbody>
 		</table>
-		<div
-			class="bg-[url(https://i.stack.imgur.com/HILmr.png)] bg-center bg-cover w-full h-[40vh]"
-		/>
+		<div id="map" class="w-full h-[60vh]" />
 	</section>
 </Layout>

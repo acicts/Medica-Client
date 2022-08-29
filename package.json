@@ -13,6 +13,7 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.1",
     "@tsconfig/svelte": "^3.0.0",
+    "@types/mapbox-gl": "^2.7.5",
     "autoprefixer": "^10.4.8",
     "postcss": "^8.4.16",
     "svelte": "^3.49.0",
@@ -24,6 +25,8 @@
     "vite": "^3.0.7"
   },
   "dependencies": {
+    "@beyonk/svelte-mapbox": "^8.1.4",
+    "mapbox-gl": "^2.10.0",
     "svelte-icons-pack": "^2.0.0",
     "svelte-spa-router": "^3.3.0"
   }
