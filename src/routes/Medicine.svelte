@@ -4,6 +4,7 @@
 	import TableRow from '../lib/medicine/TableRow.svelte';
 	import Layout from '../lib/Layout.svelte';
 	import mapboxgl from 'mapbox-gl';
+	import { medicine } from '../store';
 	mapboxgl.accessToken =
 		'pk.eyJ1Ijoic2hha3lhcGVpcmlzIiwiYSI6ImNsN2VneWQ3bTAwYXQzb3Bxb3RiaGJseW8ifQ.vWxsiWVOuY8fiv3TLD3ggg';
 
@@ -15,38 +16,12 @@
 			zoom: 7,
 		});
 	});
-	let title = 'Test medicine';
-	let sciTitle = 'Test Scientific medicine';
-	let pharmacies = [
-		{
-			id: 1,
-			shop: 'Pharmacy 1',
-			address: 'this is a placeholder address, colombo 10',
-			mrp: 50.0,
-			stock: 100,
-		},
-		{
-			id: 2,
-			shop: 'Pharmacy 2',
-			address: 'this is a placeholder address, colombo 10',
-			mrp: 150.0,
-			stock: 0,
-		},
-		{
-			id: 3,
-			shop: 'Pharmacy 3',
-			address: 'this is a placeholder address, colombo 10',
-			mrp: 120.0,
-			stock: 400,
-		},
-		{
-			id: 4,
-			shop: 'Pharmacy 4',
-			address: 'this is a placeholder address, colombo 10',
-			mrp: 50.0,
-			stock: 40,
-		},
-	];
+
+	export let params;
+	const data = $medicine[params.id];
+	let title = data.name;
+	let sciTitle = data.name;
+	let pharmacies = data.stocks;
 </script>
 
 <svelte:head>

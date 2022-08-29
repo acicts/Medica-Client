@@ -2,16 +2,17 @@
 	import TableRow from '../lib/home/TableRow.svelte';
 	import Search from '../lib/home/Search.svelte';
 	import Layout from '../lib/Layout.svelte';
-	import { medicine as newMed } from '../data';
+	import { medicine as newMed } from '../store';
 	import TagSection from '../lib/home/TagSection.svelte';
+	import { districts } from '../data';
 
 	let searchValue = '';
-	let selectValue = '';
+	let selectValue = districts[0];
 
 	$: medicines = $newMed.filter(
 		(i) =>
 			i.name.toLowerCase().includes(searchValue.toLowerCase()) &&
-			(selectValue === '' ||
+			(selectValue === 'All in Sri Lanka' ||
 				i.stocks.find(
 					(st) =>
 						st.District.toLowerCase() === selectValue.toLowerCase()

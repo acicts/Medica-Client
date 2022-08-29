@@ -1,8 +1,8 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-
+	import { districts } from '../../data';
 	export let searchValue;
-	export let selectValue = 'All of Sri Lanka';
+	export let selectValue;
 </script>
 
 <div
@@ -18,9 +18,9 @@
 		class="bg-[#2F8D76] w-[50%] md:w-[25%] border-solid border-b-[1px] border-white text-white p-[10px] outline-none"
 		bind:value={selectValue}
 	>
-		<option>All of sri lanka</option>
-		<option>Test option 1</option>
-		<option>Test option 1</option>
+		{#each districts as district}
+			<option value={district}>{district}</option>
+		{/each}
 	</select>
 </div>
 <div class="md:hidden block w-full text-sm">
@@ -32,9 +32,9 @@
 			class="bg-[#2F8D76] w-[50%] md:w-[25%] border-solid border-b-[1px] border-white text-white p-[10px] outline-none"
 			bind:value={selectValue}
 		>
-			<option>All of sri lanka</option>
-			<option>Test option 1</option>
-			<option>Test option 1</option>
+			{#each districts as district}
+				<option value={district}>{district}</option>
+			{/each}
 		</select>
 	</div>
 	<input

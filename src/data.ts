@@ -1,7 +1,25 @@
-// Pharmacies https://raw.githubusercontent.com/madurapa/pharmacy-list/master/data.json
-// Meds https://raw.githubusercontent.com/dariusk/corpora/master/data/medicine/drugs.json
-
-
-import { writable } from 'svelte/store'
-
-export const medicine = writable([]);
+export const districts = [ 'All in Sri Lanka', 'Ampara',
+'Anuradhapura',
+'Badulla',
+'Batticaloa',
+'Colombo',
+'Galle',
+'Gampaha',
+'Hambantota',
+'Jaffna',
+'Kalutara',
+'Kandy',
+'Kegalle',
+'Kilinochchi',
+'Kurunegala',
+'Mannar',
+'Matale',
+'Matara',
+'Moneragala',
+'Mullaitivu',
+'Nuwara Eliya',
+'Polonnaruwa',
+'Puttalam',
+'Ratnapura',
+'Trincomalee',
+'Vavuniya' ]

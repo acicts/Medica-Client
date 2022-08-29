@@ -1,7 +1,7 @@
 <script>
 	import Router from 'svelte-spa-router';
 	import routes from './routes';
-	import { medicine as medStore } from './data';
+	import { medicine as medStore } from './store';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
@@ -41,7 +41,6 @@
 				data['mrp'] = Math.round(totalMrp / 10) + '.00';
 				return data;
 			});
-			console.log(newMed);
 			medStore.set(newMed);
 		};
 		fetchData();
