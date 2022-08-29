@@ -50,9 +50,11 @@
 					<div
 						class="w-[1.2em] h-[1.2em] rounded-full mr-[5px] bg-white"
 					/>
-					<p class="font-bold text-xl md:text-2xl">Pharmacy App</p>
+					<p class="font-bold text-lg md:text-2xl">Pharmacy App</p>
 				</div>
-				<p class="font-light text-sm text-white w-full text-center">
+				<p
+					class="font-light text-xs md:text-sm text-white w-full text-center"
+				>
 					Powered By <a
 						class="hover:underline"
 						href="https://acicts.lk/"
@@ -62,7 +64,7 @@
 			</a>
 		</div>
 		<div class="text-white">
-			<p class="text-6xl font-black">{title}</p>
+			<p class="text-3xl md:text-6xl font-black">{title}</p>
 			<p class="text-sm font-light">{sciTitle}</p>
 		</div>
 	</section>
