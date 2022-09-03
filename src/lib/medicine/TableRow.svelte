@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { link } from 'svelte-spa-router';
-	export let shop: string;
+	export let name: string;
 	export let address: string;
 	export let mrp: number;
 	export let stock: number;
@@ -14,7 +14,7 @@
 	} rounded-full text-xs md:text-base cursor-pointer`}
 >
 	<td class="w-[40%] py-[15px] p-[20px] rounded-l-lg md:rounded-l-full"
-		><a href={`/pharmacy/${id}`} use:link>{shop}</a></td
+		><a href={`/pharmacy/${index}`} use:link>{name}</a></td
 	>
 	<td class="w-[40%] py-[15px] p-[20px]">{address}</td>
 	<td class="w-[10%] py-[15px] p-[20px]">{mrp}</td>

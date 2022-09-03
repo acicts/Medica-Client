@@ -22,6 +22,8 @@
 	let title = 'Test medicine';
 	let sciTitle = 'Test Scientific medicine';
 	let pharmacy = 'Test pharmacy';
+	export let query;
+	console.log(query);
 </script>
 
 <svelte:head>
