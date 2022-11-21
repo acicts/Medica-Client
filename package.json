@@ -26,6 +26,8 @@
   },
   "dependencies": {
     "@beyonk/svelte-mapbox": "^8.1.4",
+    "@mapbox/mapbox-sdk": "^0.14.0",
+    "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^2.10.0",
     "svelte-icons-pack": "^2.0.0",
     "svelte-spa-router": "^3.3.0"
