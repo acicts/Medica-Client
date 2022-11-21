@@ -19,7 +19,7 @@
 		});
 	});
 
-	let selectedValue;
+	let selectedValue = districts[0];
 
 	export let params;
 	let name = $querystring.split('&')[0].split('=')[1].replace('%20', ' ');
