@@ -4,7 +4,7 @@
 	export let mrp: number;
 	export let totalStock: number;
 	export let index: number;
-	export let chemicalName: number;
+	export let chemicalName: string;
 	export let id;
 	console.log(id);
 </script>
@@ -23,7 +23,7 @@
 	>
 	<td class="w-1/4 py-[15px] p-[20px]">{chemicalName}</td>
 	<td class="w-1/4 py-[15px] p-[20px]">{mrp}</td>
-	<td class="w-1/4 py-[15px] p-[20px] rounded-r-lg md:rounded-r-full"
+	<td data-testid="availability" class="w-1/4 py-[15px] p-[20px] rounded-r-lg md:rounded-r-full"
 		>{#if totalStock == 0}
 			Out of stock
 		{:else if totalStock < 100}
