@@ -1,48 +1,54 @@
-# Svelte + TS + Vite
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d42a53b4-8732-4b0a-88f5-b574bc77c85c/deploy-status)](https://app.netlify.com/sites/acicts-pharmacy-app-client/deploys)
+<a href="https://github.com/acicts/Medica-Client/stargazers"><img src="https://img.shields.io/github/stars/acicts/Medica-Client" alt="Stars Badge"/></a>
+<a href="https://github.com/acicts/Medica-Client/network/members"><img src="https://img.shields.io/github/forks/acicts/Medica-Client" alt="Forks Badge"/></a>
+<a href="https://github.com/acicts/Medica-Client/pulls"><img src="https://img.shields.io/github/issues-pr/acicts/Medica-Client" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/acicts/Medica-Client/issues"><img src="https://img.shields.io/github/issues/acicts/Medica-Client" alt="Issues Badge"/></a>
+<a href="https://github.com/acicts/Medica-Client/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/acicts/Medica-Client?color=2b9348"></a>
+<a href="https://github.com/acicts/Medica-Client/blob/master/LICENSE"><img src="https://img.shields.io/github/license/acicts/Medica-Client?color=2b9348" alt="License Badge"/></a>
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+# Medica
+Medica is an open-source project by ACICTS to help people find the medicine they want out of the pharmacies that have registered in the platform.
 
-## Recommended IDE Setup
+This repository contains the source code of the users' platform. Following are the links to other repositories.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+- [Pharmacists Platform](https://github.com/acicts/Medica-Pharmacist.git)
+- [Backend](https://github.com/acicts/Medica-Backend)
 
-## Need an official Svelte framework?
+# Technologies used
+- Svelte.JS
+- TypeScript
+- Vite
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+# How to run the code
 
-## Technical considerations
+First make sure you have the following packages/softwares installed in your machine.
+- Node
+- Git
 
-**Why use this over SvelteKit?**
+Then run the following commands.
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
-  `vite dev` and `vite build` wouldn't work in a SvelteKit environment, for example.
-
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
-
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `allowJs` in the TS template?**
-
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+#### 1.  Clone the repository from github
+```bash
+git clone https://github.com/acicts/Medica-Client.git
 ```
+#### 2. Install dependencies
+```bash
+cd Medica-Client
+npm install
+```
+
+#### 3. Create a .env file according to the [.env.example](./.env.example ".env.example") file
+
+#### 4. Start the development server
+```bash
+npm run dev
+```
+
+# Contributing
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please refer to [CONTRIBUTING.md](./CONTRIBUTING.md) for more information.
+
+# License
+[MIT](./LICENSE)
