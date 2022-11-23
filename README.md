@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d42a53b4-8732-4b0a-88f5-b574bc77c85c/deploy-status)](https://app.netlify.com/sites/acicts-pharmacy-app-client/deploys)<a href="https://github.com/acicts/Medica-Client/stargazers"><img src="https://img.shields.io/github/stars/acicts/Medica-Client" alt="Stars Badge"/></a>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d42a53b4-8732-4b0a-88f5-b574bc77c85c/deploy-status)](https://app.netlify.com/sites/acicts-pharmacy-app-client/deploys) <a href="https://github.com/acicts/Medica-Client/stargazers"><img src="https://img.shields.io/github/stars/acicts/Medica-Client" alt="Stars Badge"/></a>
 <a href="https://github.com/acicts/Medica-Client/network/members"><img src="https://img.shields.io/github/forks/acicts/Medica-Client" alt="Forks Badge"/></a>
 <a href="https://github.com/acicts/Medica-Client/pulls"><img src="https://img.shields.io/github/issues-pr/acicts/Medica-Client" alt="Pull Requests Badge"/></a>
 <a href="https://github.com/acicts/Medica-Client/issues"><img src="https://img.shields.io/github/issues/acicts/Medica-Client" alt="Issues Badge"/></a>
