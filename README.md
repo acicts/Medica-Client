@@ -5,6 +5,8 @@
 <a href="https://github.com/acicts/Medica-Client/issues"><img src="https://img.shields.io/github/issues/acicts/Medica-Client" alt="Issues Badge"/></a>
 <a href="https://github.com/acicts/Medica-Client/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/acicts/Medica-Client?color=2b9348"></a>
 <a href="https://github.com/acicts/Medica-Client/blob/master/LICENSE"><img src="https://img.shields.io/github/license/acicts/Medica-Client?color=2b9348" alt="License Badge"/></a>
+![CI](https://github.com/acicts/Medica-Client/actions/workflows/main.yml/badge.svg)
+
 
 # Medica
 Medica is an open-source project by ACICTS to help people find the medicine they want out of the pharmacies that have registered in the platform.
