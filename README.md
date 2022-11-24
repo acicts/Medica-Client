@@ -35,7 +35,7 @@ git clone https://github.com/acicts/Medica-Client.git
 #### 2. Install dependencies
 ```bash
 cd Medica-Client
-npm install
+npm i
 ```
 
 #### 3. Create a .env file according to the [.env.example](./.env.example ".env.example") file
