@@ -27,7 +27,7 @@ describe('Unit:Home/TableRow', () => {
 		data['totalStock'] = 0;
 		render(TableRow, data);
 
-		expect(screen.getByTestId('availability').innerHTML).toBe(
+		expect(screen.getByTestId('tablerow-availability').innerHTML).toBe(
 			'Out of stock'
 		);
 	});
@@ -36,7 +36,7 @@ describe('Unit:Home/TableRow', () => {
 		data['totalStock'] = 80;
 		render(TableRow, data);
 
-		expect(screen.getByTestId('availability').innerHTML).toBe(
+		expect(screen.getByTestId('tablerow-availability').innerHTML).toBe(
 			'Limited Stocks'
 		);
 	});
@@ -45,7 +45,9 @@ describe('Unit:Home/TableRow', () => {
 		data['totalStock'] = 110;
 		render(TableRow, data);
 
-		expect(screen.getByTestId('availability').innerHTML).toBe('Available');
+		expect(screen.getByTestId('tablerow-availability').innerHTML).toBe(
+			'Available'
+		);
 	});
 
 	test('snapshot test', () => {

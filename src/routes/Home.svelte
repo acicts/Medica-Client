@@ -2,7 +2,6 @@
 	import TableRow from '../lib/home/TableRow.svelte';
 	import Search from '../lib/home/Search.svelte';
 	import Layout from '../lib/Layout.svelte';
-	import { medicine as newMed } from '../store';
 	import TagSection from '../lib/home/TagSection.svelte';
 	import { districts } from '../data';
 	const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;

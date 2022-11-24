@@ -17,14 +17,18 @@
 		push(`/medicine/${chemicalName}?name=${name}`);
 	}}
 >
-	<td class="w-1/4 py-[15px] p-[20px] rounded-l-lg md:rounded-l-full"
+	<td
+		class="w-1/4 py-[15px] p-[20px] rounded-l-lg md:rounded-l-full"
+		data-testid="tablerow-name"
 		><a href={`/medicine/${chemicalName}?name=${name}`} use:link>{name}</a
 		></td
 	>
-	<td class="w-1/4 py-[15px] p-[20px]">{chemicalName}</td>
-	<td class="w-1/4 py-[15px] p-[20px]">{mrp}</td>
+	<td class="w-1/4 py-[15px] p-[20px]" data-testid="tablerow-chemicalname"
+		>{chemicalName}</td
+	>
+	<td class="w-1/4 py-[15px] p-[20px]" data-testid="tablerow-mrp">{mrp}</td>
 	<td
-		data-testid="availability"
+		data-testid="tablerow-availability"
 		class="w-1/4 py-[15px] p-[20px] rounded-r-lg md:rounded-r-full"
 		>{#if totalStock == 0}
 			Out of stock
