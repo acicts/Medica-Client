@@ -10,15 +10,15 @@
 </script>
 
 <tr
-	class="{`${
+	class={`${
 		index % 2 == 0 ? 'bg-[#CEE8B8]' : 'bg-white'
-	} rounded-full text-xs md:text-base cursor-pointer w-full`}"
-	on:click="{() => {
+	} rounded-full text-xs md:text-base cursor-pointer w-full`}
+	on:click={() => {
 		push(`/medicine/${chemicalName}?name=${name}`);
-	}}"
+	}}
 >
 	<td class="w-1/4 py-[15px] p-[20px] rounded-l-lg md:rounded-l-full"
-		><a href="{`/medicine/${chemicalName}?name=${name}`}" use:link>{name}</a
+		><a href={`/medicine/${chemicalName}?name=${name}`} use:link>{name}</a
 		></td
 	>
 	<td class="w-1/4 py-[15px] p-[20px]">{chemicalName}</td>

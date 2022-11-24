@@ -12,8 +12,8 @@ describe('Unit:Home/TableRow', () => {
 		index: 0,
 	};
 	afterEach(() => {
-		 cleanup()
-	})
+		cleanup();
+	});
 	test('should render parsed data', () => {
 		render(TableRow, data);
 
@@ -22,32 +22,35 @@ describe('Unit:Home/TableRow', () => {
 				expect(screen.getByText(data[key])).toBeTruthy();
 		});
 	});
-	
+
 	test('should show Out of stock when totalStock == 0', () => {
 		data['totalStock'] = 0;
 		render(TableRow, data);
 
-		expect(screen.getByTestId('availability').innerHTML).toBe('Out of stock');
-	})
+		expect(screen.getByTestId('availability').innerHTML).toBe(
+			'Out of stock'
+		);
+	});
 
 	test('should show Limited Stocks when totalStock < 100', () => {
-                data['totalStock'] = 80;
-                render(TableRow, data);
+		data['totalStock'] = 80;
+		render(TableRow, data);
 
-		expect(screen.getByTestId('availability').innerHTML).toBe('Limited Stocks');
-        })
+		expect(screen.getByTestId('availability').innerHTML).toBe(
+			'Limited Stocks'
+		);
+	});
 
 	test('should show Available when totalStock >= 100', () => {
-                data['totalStock'] = 110;
-                render(TableRow, data);
+		data['totalStock'] = 110;
+		render(TableRow, data);
 
-                expect(screen.getByTestId('availability').innerHTML).toBe('Available');
-        })
+		expect(screen.getByTestId('availability').innerHTML).toBe('Available');
+	});
 
 	test('snapshot test', () => {
 		render(TableRow, data);
 
 		expect(screen).toMatchSnapshot();
-	})
-
+	});
 });

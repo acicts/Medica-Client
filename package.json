@@ -1,41 +1,49 @@
 {
-  "name": "pharmacy-app-client",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "dev:host": "vite --host",
-    "build": "vite build",
-    "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "test": "vitest",
-    "coverage": "vitest --run coverage"
-  },
-  "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.1",
-    "@testing-library/svelte": "^3.2.2",
-    "@tsconfig/svelte": "^3.0.0",
-    "@types/mapbox-gl": "^2.7.5",
-    "autoprefixer": "^10.4.8",
-    "jsdom": "^20.0.3",
-    "msw": "^0.49.0",
-    "postcss": "^8.4.16",
-    "svelte": "^3.49.0",
-    "svelte-check": "^2.8.0",
-    "svelte-preprocess": "^4.10.7",
-    "tailwindcss": "^3.1.8",
-    "tslib": "^2.4.0",
-    "typescript": "^4.6.4",
-    "vite": "^3.0.7",
-    "vitest": "^0.25.2"
-  },
-  "dependencies": {
-    "@beyonk/svelte-mapbox": "^8.1.4",
-    "@mapbox/mapbox-sdk": "^0.14.0",
-    "mapbox": "^1.0.0-beta10",
-    "mapbox-gl": "^2.10.0",
-    "svelte-icons-pack": "^2.0.0",
-    "svelte-spa-router": "^3.3.0"
-  }
+	"name": "pharmacy-app-client",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"dev:host": "vite --host",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"test": "vitest",
+		"coverage": "vitest --run coverage",
+		"format:check": "prettier --check .",
+		"format:write": "prettier --write .",
+		"lint:check": "eslint .",
+		"lint:fix": "eslint --fix ."
+	},
+	"devDependencies": {
+		"@sveltejs/vite-plugin-svelte": "^1.0.1",
+		"@testing-library/svelte": "^3.2.2",
+		"@tsconfig/svelte": "^3.0.0",
+		"@types/mapbox-gl": "^2.7.5",
+		"autoprefixer": "^10.4.8",
+		"eslint": "^8.28.0",
+		"eslint-plugin-svelte": "^2.13.0",
+		"jsdom": "^20.0.3",
+		"msw": "^0.49.0",
+		"postcss": "^8.4.16",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.8.1",
+		"svelte": "^3.49.0",
+		"svelte-check": "^2.8.0",
+		"svelte-preprocess": "^4.10.7",
+		"tailwindcss": "^3.1.8",
+		"tslib": "^2.4.0",
+		"typescript": "^4.6.4",
+		"vite": "^3.0.7",
+		"vitest": "^0.25.2"
+	},
+	"dependencies": {
+		"@beyonk/svelte-mapbox": "^8.1.4",
+		"@mapbox/mapbox-sdk": "^0.14.0",
+		"mapbox": "^1.0.0-beta10",
+		"mapbox-gl": "^2.10.0",
+		"svelte-icons-pack": "^2.0.0",
+		"svelte-spa-router": "^3.3.0"
+	}
 }

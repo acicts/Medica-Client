@@ -3,4 +3,4 @@
 	import routes from './routes';
 </script>
 
-<Router routes="{routes}" />
+<Router {routes} />

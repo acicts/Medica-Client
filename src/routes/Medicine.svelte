@@ -132,20 +132,20 @@
 	></script>
 </svelte:head>
 
-<Layout isHome="{false}">
+<Layout isHome={false}>
 	<section
 		slot="hero"
 		class="min-h-[30vh] p-[30px] flex flex-col items-start justify-between"
 	>
 		<div class="w-full flex items-center justify-between">
-			<div></div>
+			<div />
 			<a class="w-max" href="/" use:link>
 				<div
 					class="flex items-center justify-between w-max h-max text-white mb-[2px]"
 				>
 					<div
 						class="w-[1.2em] h-[1.2em] rounded-full mr-[5px] bg-white"
-					></div>
+					/>
 					<p class="font-bold text-lg md:text-2xl">Pharmacy App</p>
 				</div>
 				<p
@@ -177,11 +177,11 @@
 					<option>Price</option>
 				</select>
 				<select
-					bind:value="{selectedValue}"
+					bind:value={selectedValue}
 					class="border-solid border-b-[1px] border-[#6C6C6C] p-[5px] w-[40%] md:w-[20%] text-[#6C6C6C] bg-white"
 				>
 					{#each districts as district}
-						<option value="{district}">{district}</option>
+						<option value={district}>{district}</option>
 					{/each}
 				</select>
 			</div>
@@ -211,7 +211,7 @@
 							</tr>
 						{:else}
 							{#each pharmacies.availablePlaces as pharmacy, index (pharmacy.id)}
-								<TableRow {...pharmacy} index="{index}" />
+								<TableRow {...pharmacy} {index} />
 							{/each}
 						{/if}
 						{#if selectedValue !== 'All in Sri Lanka' && pharmacies.unAvailablePlaces.length > 0}
@@ -219,7 +219,7 @@
 								Also Available In
 							</p>
 							{#each pharmacies.unAvailablePlaces as pharmacy, index (pharmacy.id)}
-								<TableRow {...pharmacy} index="{index}" />
+								<TableRow {...pharmacy} {index} />
 							{/each}
 						{/if}
 					</tbody>
@@ -227,6 +227,6 @@
 			</div>
 		{/await}
 
-		<div id="map" class="w-full h-[60vh]"></div>
+		<div id="map" class="w-full h-[60vh]" />
 	</section>
 </Layout>

@@ -72,20 +72,20 @@
 	></script>
 </svelte:head>
 
-<Layout isHome="{false}">
+<Layout isHome={false}>
 	<section
 		slot="hero"
 		class="min-h-[30vh] p-[30px] flex flex-col items-start justify-between"
 	>
 		<div class="w-full flex items-center justify-between">
-			<div></div>
+			<div />
 			<a class="w-max" href="/" use:link>
 				<div
 					class="flex items-center justify-between w-max h-max text-white mb-[2px]"
 				>
 					<div
 						class="w-[1.2em] h-[1.2em] rounded-full mr-[5px] bg-white"
-					></div>
+					/>
 					<p class="font-bold text-lg md:text-2xl">Pharmacy App</p>
 				</div>
 				<p
@@ -124,7 +124,7 @@
 						<td
 							class="flex items-center justify-between w-max pb-[10px] md:p-[10px]"
 						>
-							<Icon src="{BsTelephone}" />
+							<Icon src={BsTelephone} />
 							<span class="ml-[5px]">Contact</span>
 						</td>
 						<td class=" w-6/12 sm:w-10/12 pb-[10px] md:p-[10px]"
@@ -135,7 +135,7 @@
 						<td
 							class="flex items-center justify-between w-max pb-[10px] md:p-[10px]"
 						>
-							<Icon src="{TiLocationOutline}" color="#6C6C6C" />
+							<Icon src={TiLocationOutline} color="#6C6C6C" />
 							<span class="ml-[5px]">Address</span>
 						</td>
 						<td class=" w-6/12 sm:w-10/12 pb-[10px] md:p-[10px]"
@@ -146,7 +146,7 @@
 						<td
 							class="flex items-center justify-between w-max pb-[10px] md:p-[10px]"
 						>
-							<Icon src="{AiOutlineMail}" color="#6C6C6C" />
+							<Icon src={AiOutlineMail} color="#6C6C6C" />
 							<span class="ml-[5px]">Email</span>
 						</td>
 						<td class=" w-6/12 sm:w-10/12 pb-[10px] md:p-[10px]"
@@ -157,6 +157,6 @@
 			</table>
 		{/await}
 
-		<div id="map" class="w-full h-[60vh]"></div>
+		<div id="map" class="w-full h-[60vh]" />
 	</section>
 </Layout>
