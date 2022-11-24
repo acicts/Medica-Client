@@ -5,12 +5,10 @@
 	import { medicine as newMed } from '../store';
 	import TagSection from '../lib/home/TagSection.svelte';
 	import { districts } from '../data';
-	import { API_ENDPOINT } from '../lib/env.js';
-	import { onDestroy } from 'svelte';
+	const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
 
 	let searchValue = '';
 	let selectValue = districts[0];
-
 	const fetchData = async (searchValue, selectValue) => {
 		let url = `${API_ENDPOINT}/user/medicine?med=${searchValue}${
 			selectValue !== 'All in Sri Lanka' ? `&district=${selectValue}` : ''

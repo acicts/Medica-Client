@@ -5,10 +5,11 @@
 	import Layout from '../lib/Layout.svelte';
 	import mapboxgl from 'mapbox-gl';
 	import { districts } from '../data';
-	import { API_ENDPOINT } from '../lib/env';
 	import 'mapbox-gl/dist/mapbox-gl.css';
-	mapboxgl.accessToken =
-		'pk.eyJ1Ijoic2hha3lhcGVpcmlzIiwiYSI6ImNsN2VneWQ3bTAwYXQzb3Bxb3RiaGJseW8ifQ.vWxsiWVOuY8fiv3TLD3ggg';
+	const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
+	const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
+
+	mapboxgl.accessToken = MAPBOX_TOKEN;
 	let map;
 	onMount(() => {
 		map = new mapboxgl.Map({

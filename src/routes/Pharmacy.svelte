@@ -9,10 +9,10 @@
 	import AiOutlineMail from 'svelte-icons-pack/ai/AiOutlineMail';
 	import mapboxgl from 'mapbox-gl';
 	import 'mapbox-gl/dist/mapbox-gl.css';
-	import { API_ENDPOINT } from '../lib/env';
+	const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
+	const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
 
-	mapboxgl.accessToken =
-		'pk.eyJ1Ijoic2hha3lhcGVpcmlzIiwiYSI6ImNsN2VneWQ3bTAwYXQzb3Bxb3RiaGJseW8ifQ.vWxsiWVOuY8fiv3TLD3ggg';
+	mapboxgl.accessToken = MAPBOX_TOKEN;
 	let map;
 	onMount(() => {
 		map = new mapboxgl.Map({
