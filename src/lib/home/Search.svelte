@@ -13,6 +13,7 @@
 		class="w-[65%] px-[25px] py-[10px] bg-[#E7E7E7] text-[#6C6C6C] rounded-full"
 		placeholder="Enter the checmical name"
 		bind:value={searchValue}
+		data-testid="search-input"
 	/>
 	<select
 		class="bg-[#2F8D76] w-[50%] md:w-[25%] border-solid border-b-[1px] border-white text-white p-[10px] outline-none"
@@ -31,6 +32,7 @@
 		<select
 			class="bg-[#2F8D76] w-[50%] md:w-[25%] border-solid border-b-[1px] border-white text-white p-[10px] outline-none"
 			bind:value={selectValue}
+			data-testid="search-select"
 		>
 			{#each districts as district}
 				<option value={district}>{district}</option>
@@ -41,5 +43,6 @@
 		class="ml-[5%] w-[90%] px-[25px] py-[7px] md:py-[10px] bg-[#E7E7E7] text-[#6C6C6C] rounded-full"
 		placeholder="Enter the chemical name"
 		bind:value={searchValue}
+		data-testid="search-input"
 	/>
 </div>
