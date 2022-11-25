@@ -27,15 +27,17 @@
 					chemicalName: i.chemicalName,
 				};
 			}),
-			suggestions: data.suggestions.map((i) => {
-				return {
-					name: i.name,
-					totalStock: i.stock,
-					mrp: i.pricePerUnit,
-					id: i._id,
-					chemicalName: i.chemicalName,
-				};
-			}),
+			suggestions: data.suggestions
+				? data.suggestions.map((i) => {
+						return {
+							name: i.name,
+							totalStock: i.stock,
+							mrp: i.pricePerUnit,
+							id: i._id,
+							chemicalName: i.chemicalName,
+						};
+				  })
+				: [],
 		};
 	};
 
