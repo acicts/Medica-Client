@@ -109,6 +109,7 @@
 					mrp: i.pricePerUnit,
 					stock: i.stock,
 					id: i.pharmacy._id,
+					medicineId: i._id,
 				};
 			}),
 			unAvailablePlaces: data.notSelectedMedicine.map((i) => {
@@ -118,6 +119,7 @@
 					mrp: i.pricePerUnit,
 					stock: i.stock,
 					id: i.pharmacy._id,
+					medicineId: i._id,
 				};
 			}),
 		};

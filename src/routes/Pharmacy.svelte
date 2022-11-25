@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { link } from 'svelte-spa-router';
+	import { link, querystring } from 'svelte-spa-router';
 	import Layout from '../lib/Layout.svelte';
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import LocationIcon from 'svelte-icons-pack/fa/FaSolidLocationArrow';
@@ -13,6 +13,10 @@
 	const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
 
 	mapboxgl.accessToken = MAPBOX_TOKEN;
+	let medicineId = $querystring
+		.split('&')[0]
+		.split('=')[1]
+		.replace('%20', ' ');
 	let map;
 	onMount(() => {
 		map = new mapboxgl.Map({
@@ -54,7 +58,7 @@
 	};
 
 	const fetchData = async () => {
-		const url = `${API_ENDPOINT}/user/pharmacies/${params.id}`;
+		const url = `${API_ENDPOINT}/user/pharmacies/${params.id}?med=${medicineId}`;
 		const response = await fetch(url);
 		const data = await response.json();
 		const address = data.pharmacy.contact.address.replace(' ', '+');

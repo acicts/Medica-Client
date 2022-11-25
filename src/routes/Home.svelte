@@ -15,7 +15,38 @@
 		const response = await fetch(url);
 		const data = await response.json();
 
-		return data.medicines.map((i) => {
+		console.log(data);
+
+		return {
+			medicines: data.medicines.map((i) => {
+				return {
+					name: i.name,
+					totalStock: i.stock,
+					mrp: i.pricePerUnit,
+					id: i._id,
+					chemicalName: i.chemicalName,
+				};
+			}),
+			suggestions: data.suggestions.map((i) => {
+				return {
+					name: i.name,
+					totalStock: i.stock,
+					mrp: i.pricePerUnit,
+					id: i._id,
+					chemicalName: i.chemicalName,
+				};
+			}),
+		};
+	};
+
+	const getStockAvailability = async (status) => {
+		let url = `${API_ENDPOINT}/user/medicine?availability=${status}`;
+		const response = await fetch(url);
+		const data = await response.json();
+
+		console.log(data);
+
+		return data.medicines.slice(0, 8).map((i) => {
 			return {
 				name: i.name,
 				totalStock: i.stock,
@@ -28,15 +59,9 @@
 
 	$: promise = fetchData(searchValue, selectValue);
 
-	// $: medicines = $newMed.filter(
-	// 	(i) =>
-	// 		i.name.toLowerCase().includes(searchValue.toLowerCase()) &&
-	// 		(selectValue === 'All in Sri Lanka' ||
-	// 			i.stocks.find(
-	// 				(st) =>
-	// 					st.District.toLowerCase() === selectValue.toLowerCase()
-	// 			))
-	// );
+	const outOfStocks = getStockAvailability('OS');
+	const limitedStocks = getStockAvailability('LS');
+	const availableStocks = getStockAvailability('AV');
 </script>
 
 <Layout isHome={true}>
@@ -67,8 +92,8 @@
 		{#if searchValue.trim().length > 0}
 			{#await promise}
 				<p>Loading...</p>
-			{:then medicines}
-				{#if medicines.length == 0}
+			{:then data}
+				{#if data.medicines.length == 0}
 					<p
 						class="text-[#5E9486] w-full text-center my-[10px] font-bold text-xl"
 					>
@@ -94,65 +119,22 @@
 								</tr>
 							</thead>
 							<tbody>
-								{#each medicines as medicine, index (medicine.id)}
+								{#each data.medicines as medicine, index (medicine.id)}
 									<TableRow {...medicine} {index} />
 								{/each}
 							</tbody>
 						</table>
 					</div>
 				{/if}
-				<TagSection
-					title="Similar Searches"
-					tags={[
-						'Value 1',
-						'Value 2',
-						'Value 3',
-						'Value 4',
-						'Value 5',
-						'Value 6',
-						'Value 7',
-					]}
-				/>
+				<TagSection title="Suggestions" tags={data.suggestions} />
 			{:catch error}
 				<p style="color: red">{error.message}</p>
 			{/await}
 		{:else}
-			<TagSection
-				title="Empty Stocks"
-				tags={[
-					'Value 1',
-					'Value 2',
-					'Value 3',
-					'Value 4',
-					'Value 5',
-					'Value 6',
-					'Value 7',
-				]}
-			/>
-			<TagSection
-				title="Least Available Stocks"
-				tags={[
-					'Value 1',
-					'Value 2',
-					'Value 3',
-					'Value 4',
-					'Value 5',
-					'Value 6',
-					'Value 7',
-				]}
-			/>
-			<TagSection
-				title="Most Searched"
-				tags={[
-					'Value 1',
-					'Value 2',
-					'Value 3',
-					'Value 4',
-					'Value 5',
-					'Value 6',
-					'Value 7',
-				]}
-			/>
+			<TagSection title="Empty Stocks" tags={outOfStocks} />
+
+			<TagSection title="Limited Stocks" tags={limitedStocks} />
+			<TagSection title="Available Stocks" tags={availableStocks} />
 		{/if}
 	</section>
 </Layout>
