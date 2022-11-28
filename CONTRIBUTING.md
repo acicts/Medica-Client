@@ -1,6 +1,6 @@
 # Contributing To Auth Bee
 
-Hi, first of all I'd like to thank you for contributing project Medica. It's people like you who makes Medica like tools great platforms for the community.
+Hi, first of all We'd like to thank you for contributing project Medica. It's people like you who makes Medica like tools great platforms for the community.
 
 Following these guidelines helps to communicate that you respect the time of the fellow developers managing and developing this project. In return, the also should hel you in addressing your issue, assessing changes, and helping to finalize your pull request.
 
@@ -29,7 +29,7 @@ No problems. Everyone one was once a beginner. First you can start by checking i
 2. First make a fork of the repo and clone the forked repo into your machine.
 3. Then install all the dependencies by running `npm i`
 4. Next make your changes.
-5. Run `npm run check`, `npm run lint` & `npm run test` to check whether there's no any issue in linting or testing.
+5. Run `npm run format:check` & `npm run test` to check whether there's no any issue in formatting or testing.
 6. Next push changes in to your forked repo.
 7. Then create a pull request to the main repo from you forked repo.
 
